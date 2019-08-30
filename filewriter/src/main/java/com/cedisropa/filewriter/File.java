@@ -13,9 +13,9 @@ public class File {
     private static Guia guia;
     private static Context context;
 
-     public File(Context context, Guia guia){
+     public File(Context context, Guia nomGuia){
          this.context = context;
-         this.guia = guia;
+         this.guia = nomGuia;
      }
 
      public void write() throws IOException {
@@ -35,6 +35,7 @@ public class File {
          writer.append(String.format("%1$04d",guia.getUnidades()));
          writer.flush();
          writer.close();
-         Toast.makeText(context, "Archivo creado", Toast.LENGTH_SHORT).show();
+         Toast.makeText(context, "Se crea archivo!!!", Toast.LENGTH_SHORT).show();
+         System.out.println();
      }
 }
