@@ -22,7 +22,7 @@ public class Guia {
     }
 
     public Guia(){
-        this.fecha = "";
+        this.fecha = "AYER";
         this.ciudad = "";
         this.tipoEmpaque = "";
         this.nomGuia = "";

@@ -13,9 +13,9 @@ public class File {
     private static Guia guia;
     private static Context context;
 
-     public File(Context context, Guia guia){
+     public File(Context context, Guia guiaLoca){
          this.context = context;
-         this.guia = guia;
+         this.guia = guiaLoca;
      }
 
      public void write() throws IOException {
@@ -23,7 +23,7 @@ public class File {
          if (!root.exists()) {
              root.mkdirs();
          }
-         java.io.File gpxfile = new java.io.File(root, "PRUEBA_GUIAGENERADA.DAT");
+         java.io.File gpxfile = new java.io.File(root, "GENERANDO_CONFLICTOS.DAT");
          FileWriter writer = new FileWriter(gpxfile);
          writer.append(guia.getFecha());
          writer.append(guia.getCiudad());
@@ -35,6 +35,6 @@ public class File {
          writer.append(String.format("%1$04d",guia.getUnidades()));
          writer.flush();
          writer.close();
-         Toast.makeText(context, "Archivo creado", Toast.LENGTH_SHORT).show();
+         Toast.makeText(context, "Archivo creado!!.", Toast.LENGTH_SHORT).show();
      }
 }
