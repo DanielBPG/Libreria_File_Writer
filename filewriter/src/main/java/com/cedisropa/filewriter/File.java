@@ -13,17 +13,17 @@ public class File {
     private static Guia guia;
     private static Context context;
 
-     public File(Context context, Guia guia){
+     public File(Context context, Guia guia12){
          this.context = context;
-         this.guia = guia;
+         this.guia = guia12;
      }
 
      public void write() throws IOException {
-         java.io.File root = new java.io.File(Environment.getExternalStorageDirectory(), "Lib");
+         java.io.File root = new java.io.File(Environment.getExternalStorageDirectory(), "Libs");
          if (!root.exists()) {
              root.mkdirs();
          }
-         java.io.File gpxfile = new java.io.File(root, "PRUEBA_GUIAGENERADA.DAT");
+         java.io.File gpxfile = new java.io.File(root, "PRUEBA_GUIAGENERADA_CON_LIBRERIA.DAT");
          FileWriter writer = new FileWriter(gpxfile);
          writer.append(guia.getFecha());
          writer.append(guia.getCiudad());
@@ -35,6 +35,6 @@ public class File {
          writer.append(String.format("%1$04d",guia.getUnidades()));
          writer.flush();
          writer.close();
-         Toast.makeText(context, "Archivo creado", Toast.LENGTH_SHORT).show();
+         Toast.makeText(context, "Archivo creado con exito", Toast.LENGTH_SHORT).show();
      }
 }
