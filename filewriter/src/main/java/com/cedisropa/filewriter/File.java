@@ -19,19 +19,14 @@ public class File {
      }
 
      public void write() throws IOException {
-<<<<<<< HEAD
          java.io.File root = new java.io.File(Environment.getExternalStorageDirectory(), "Cambio");
+
          if (!root.exists()) {
              root.mkdirs();
          }
-         java.io.File gpxfile = new java.io.File(root, "GUIAGENERADA.DAT");
-=======
-         java.io.File root = new java.io.File(Environment.getExternalStorageDirectory(), "Libs");
-         if (!root.exists()) {
-             root.mkdirs();
-         }
+
          java.io.File gpxfile = new java.io.File(root, "PRUEBA_GUIAGENERADA_CON_LIBRERIA.DAT");
->>>>>>> 77e7c4f680400f1b8df0e4a327c8d99972bd65e3
+
          FileWriter writer = new FileWriter(gpxfile);
          writer.append(guia.getFecha());
          writer.append(guia.getCiudad());
@@ -43,10 +38,6 @@ public class File {
          writer.append(String.format("%1$05d",guia.getUnidades()));
          writer.flush();
          writer.close();
-<<<<<<< HEAD
-         Toast.makeText(context, "Se generó archivo", Toast.LENGTH_SHORT).show();
-=======
          Toast.makeText(context, "Archivo creado con exito", Toast.LENGTH_SHORT).show();
->>>>>>> 77e7c4f680400f1b8df0e4a327c8d99972bd65e3
      }
 }
