@@ -24,17 +24,17 @@ public class File {
              root.mkdirs();
          }
          java.io.File gpxfile = new java.io.File(root, "PRUEBA_GUIAGENERADA.DAT");
-         FileWriter writer = new FileWriter(gpxfile);
-         writer.append(guia.getFecha());
-         writer.append(guia.getCiudad());
-         writer.append(guia.getNumGuia());
-         writer.append(guia.getNomGuia());
-         writer.append(String.format("%1$04d",guia.getNumLote()));
-         writer.append(guia.getTipoEmpaque());
-         writer.append(String.valueOf(guia.getNumSurtidor()));
-         writer.append(String.format("%1$04d",guia.getUnidades()));
-         writer.flush();
-         writer.close();
+         FileWriter writerFile = new FileWriter(gpxfile);
+         writerFile.append(guia.getFecha());
+         writerFile.append(guia.getCiudad());
+         writerFile.append(guia.getNumGuia());
+         writerFile.append(guia.getNomGuia());
+         writerFile.append(String.format("%1$04d",guia.getNumLote()));
+         writerFile.append(guia.getTipoEmpaque());
+         writerFile.append(String.valueOf(guia.getNumSurtidor()));
+         writerFile.append(String.format("%1$04d",guia.getUnidades()));
+         writerFile.flush();
+         writerFile.close();
          Toast.makeText(context, "Archivo creado", Toast.LENGTH_SHORT).show();
      }
 }
