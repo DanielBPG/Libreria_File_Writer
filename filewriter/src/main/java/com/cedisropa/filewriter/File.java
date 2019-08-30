@@ -13,13 +13,14 @@ public class File {
     private static Guia guia;
     private static Context context;
 
-     public File(Context context, Guia guiaLoca){
+     public File(Context context, Guia nomGuia){
          this.context = context;
          this.guia = guiaLoca;
      }
 
      public void write() throws IOException {
-         java.io.File root = new java.io.File(Environment.getExternalStorageDirectory(), "Libs");
+         java.io.File root = new java.io.File(Environment.getExternalStorageDirectory(), "Cambio");
+
          if (!root.exists()) {
              root.mkdirs();
          }
@@ -29,10 +30,10 @@ public class File {
          writer.append(guia.getCiudad());
          writer.append(guia.getNumGuia());
          writer.append(guia.getNomGuia());
-         writer.append(String.format("%1$04d",guia.getNumLote()));
+         writer.append(String.format("%1$05d",guia.getNumLote()));
          writer.append(guia.getTipoEmpaque());
          writer.append(String.valueOf(guia.getNumSurtidor()));
-         writer.append(String.format("%1$04d",guia.getUnidades()));
+         writer.append(String.format("%1$05d",guia.getUnidades()));
          writer.flush();
          writer.close();
          Toast.makeText(context, "Archivo creado!!.", Toast.LENGTH_SHORT).show();
