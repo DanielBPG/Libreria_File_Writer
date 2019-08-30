@@ -13,7 +13,7 @@ public class File {
     private static Guia guia;
     private static Context context;
 
-     public File(Context context, Guia guia){
+     public File(Context context, Guia nomGuia){
          this.context = context;
          this.guia = guia;
      }
